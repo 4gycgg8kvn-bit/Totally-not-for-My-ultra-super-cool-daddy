@@ -170,11 +170,12 @@ function showPage(){
 
 title.textContent = pages[currentPage].title;
 
-text.textContent = pages[currentPage].text;
-
 button.textContent = pages[currentPage].button;
 
 progress.style.width = ((currentPage+1)/pages.length)*100 + "%";
+
+typeWriter(pages[currentPage].text);
+
 
 }
 
@@ -187,5 +188,38 @@ currentPage++;
 showPage();
 
 }
+
+}
+function typeWriter(message){
+
+text.innerHTML="";
+
+let i=0;
+
+const speed=25;
+
+function type(){
+
+if(i<message.length){
+
+if(message.charAt(i)=="\n"){
+
+text.innerHTML+="<br>";
+
+}else{
+
+text.innerHTML+=message.charAt(i);
+
+}
+
+i++;
+
+setTimeout(type,speed);
+
+}
+
+}
+
+type();
 
 }
