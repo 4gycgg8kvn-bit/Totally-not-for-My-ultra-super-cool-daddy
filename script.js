@@ -364,3 +364,36 @@ function createConfetti(){
     }
 
 }
+// 🤍 Secret Heart
+
+const secretHeart = document.getElementById("secretHeart");
+
+secretHeart.onclick = ()=>{
+
+    const popup = document.createElement("div");
+
+    popup.className = "popup";
+
+    popup.innerHTML = `
+        <h2>🤍 SECRET FOUND!</h2>
+        <br>
+        <p>
+        Reward:
+        <br><br>
+        One free hug.
+        <br><br>
+        Redeem whenever.
+        <br><br>
+        <i>(No refunds.)</i>
+        </p>
+    `;
+
+    document.body.appendChild(popup);
+
+    setTimeout(()=>{
+
+        popup.remove();
+
+    },3500);
+
+};
