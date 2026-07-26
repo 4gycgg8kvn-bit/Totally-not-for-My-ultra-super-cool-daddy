@@ -389,3 +389,53 @@ min-height:220px;
     }
 
 }
+/* 🤍 Secret Popup */
+
+.popup{
+
+    position:fixed;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:min(330px,90vw);
+
+    padding:30px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    border-radius:25px;
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:0 15px 40px rgba(0,0,0,.4);
+
+    z-index:99999;
+
+    animation:popup .25s ease;
+
+}
+
+@keyframes popup{
+
+    from{
+
+        opacity:0;
+        transform:translate(-50%,-45%) scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translate(-50%,-50%) scale(1);
+
+    }
+
+}
