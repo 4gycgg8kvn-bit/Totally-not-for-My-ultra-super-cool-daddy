@@ -2,13 +2,13 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+    font-family:"Poppins",sans-serif;
 }
 
 body{
     background:linear-gradient(180deg,#0d1b2a,#1b263b,#415a77);
-    overflow:hidden;
     color:white;
+    overflow:hidden;
 }
 
 /* Hidden */
@@ -17,7 +17,7 @@ body{
     display:none;
 }
 
-/* ⭐ Background */
+/* Stars */
 
 #stars{
     position:fixed;
@@ -25,7 +25,30 @@ body{
     z-index:-1;
 }
 
-/* 🌌 Loading Screen */
+/* Music */
+
+#musicBtn{
+    position:fixed;
+    top:20px;
+    right:20px;
+
+    width:55px;
+    height:55px;
+
+    border:none;
+    border-radius:50%;
+
+    background:rgba(255,255,255,.12);
+
+    color:white;
+    font-size:24px;
+
+    backdrop-filter:blur(12px);
+
+    cursor:pointer;
+}
+
+/* Loading */
 
 #loadingScreen{
     width:100vw;
@@ -46,31 +69,31 @@ body{
 
     border:1px solid rgba(255,255,255,.18);
 
-    backdrop-filter:blur(18px);
+    border-radius:30px;
 
-    border-radius:28px;
+    backdrop-filter:blur(20px);
 
     padding:45px;
 
-    box-shadow:0 15px 45px rgba(0,0,0,.35);
+    box-shadow:0 20px 50px rgba(0,0,0,.4);
 
 }
 
 #loadingText{
 
-    white-space:pre-line;
+    min-height:330px;
 
-    font-size:1.2rem;
+    white-space:pre-line;
 
     line-height:2;
 
-    min-height:320px;
+    font-size:1.1rem;
 
 }
 
 #continueBtn{
 
-    display:block;
+    display:none;
 
     margin:35px auto 0;
 
@@ -84,13 +107,11 @@ body{
 
     color:#2944b5;
 
-    font-size:1rem;
-
     font-weight:600;
 
     cursor:pointer;
 
-    transition:.3s;
+    transition:.25s;
 
 }
 
@@ -100,12 +121,11 @@ body{
 
 }
 
-/* Website */
+/* Main Website */
 
 #mainWebsite{
 
     width:100vw;
-
     height:100vh;
 
     display:flex;
@@ -122,13 +142,13 @@ body{
 
     width:min(650px,95vw);
 
-    background:rgba(255,255,255,.1);
+    background:rgba(255,255,255,.08);
 
-    border:1px solid rgba(255,255,255,.2);
-
-    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.18);
 
     border-radius:30px;
+
+    backdrop-filter:blur(18px);
 
     padding:45px;
 
@@ -136,69 +156,7 @@ body{
 
     position:relative;
 
-    box-shadow:0 15px 50px rgba(0,0,0,.35);
-
-}
-
-#pageTitle{
-
-    font-size:2.2rem;
-
-    margin-bottom:25px;
-
-}
-
-#pageText{
-
-    white-space:pre-line;
-
-    line-height:2;
-
-    font-size:1.1rem;
-
-    min-height:260px;
-
-}
-
-#nextButton{
-
-    margin-top:30px;
-
-    padding:15px 35px;
-
-    border:none;
-
-    border-radius:999px;
-
-    background:white;
-
-    color:#2944b5;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-#nextButton:hover{
-
-    transform:scale(1.05);
-
-}
-
-#secretHeart{
-
-    position:absolute;
-
-    right:25px;
-
-    bottom:20px;
-
-    cursor:pointer;
-
-    font-size:24px;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
 
 }
 
@@ -236,33 +194,65 @@ body{
 
 }
 
-/* Music */
+#pageTitle{
 
-#musicBtn{
+    font-size:2.1rem;
 
-    position:fixed;
+    margin-bottom:25px;
 
-    top:20px;
+}
 
-    right:20px;
+#pageText{
 
-    width:52px;
+    min-height:260px;
 
-    height:52px;
+    line-height:2;
+
+    white-space:pre-line;
+
+    font-size:1.08rem;
+
+}
+
+#nextButton{
+
+    margin-top:25px;
+
+    padding:15px 35px;
 
     border:none;
 
-    border-radius:50%;
+    border-radius:999px;
 
-    background:rgba(255,255,255,.12);
+    background:white;
 
-    color:white;
+    color:#2944b5;
 
-    font-size:22px;
+    font-weight:600;
 
     cursor:pointer;
 
-    backdrop-filter:blur(12px);
+    transition:.25s;
+
+}
+
+#nextButton:hover{
+
+    transform:scale(1.05);
+
+}
+
+#secretHeart{
+
+    position:absolute;
+
+    bottom:20px;
+
+    right:25px;
+
+    cursor:pointer;
+
+    font-size:24px;
 
 }
 
@@ -272,7 +262,7 @@ body{
 
 .card{
 
-padding:30px 22px;
+padding:28px 22px;
 
 }
 
@@ -290,29 +280,4 @@ min-height:220px;
 
 }
 
-}
-
-/* Smooth page fade */
-
-#pageTitle,
-#pageText{
-    transition: opacity .25s ease;
-}
-
-/* 🎉 Confetti */
-
-.confetti{
-    position:fixed;
-    top:-20px;
-    width:10px;
-    height:10px;
-    animation:fall 4s linear forwards;
-    z-index:999;
-}
-
-@keyframes fall{
-    to{
-        transform:translateY(110vh) rotate(720deg);
-        opacity:0;
-    }
 }
