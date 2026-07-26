@@ -209,13 +209,13 @@ function typePage(message){
 
         if(i < message.length){
 
-            if(message[i] === "\n"){
+            if(message.charAt(i) === "\n"){
 
                 pageText.innerHTML += "<br>";
 
             }else{
 
-                pageText.innerHTML += message[i];
+                pageText.innerHTML += message.charAt(i);
 
             }
 
@@ -235,24 +235,15 @@ function showPage(){
 
     const page = pages[currentPage];
 
-    pageTitle.style.opacity = "0";
-    pageText.style.opacity = "0";
+    pageTitle.textContent = page.title;
+    pageText.innerHTML = "";
 
-    setTimeout(()=>{
+    nextButton.textContent = page.button;
 
-        pageTitle.textContent = page.title;
+    progressBar.style.width =
+    ((currentPage + 1) / pages.length) * 100 + "%";
 
-        nextButton.textContent = page.button;
-
-        progressBar.style.width =
-        ((currentPage+1)/pages.length)*100 + "%";
-
-        pageTitle.style.opacity = "1";
-        pageText.style.opacity = "1";
-
-        typePage(page.text);
-
-    },250);
+    typePage(page.text);
 
 }
 
