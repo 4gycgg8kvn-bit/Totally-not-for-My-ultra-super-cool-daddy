@@ -281,3 +281,39 @@ min-height:220px;
 }
 
 }
+/* ⭐ Stars */
+
+.star{
+
+    position:absolute;
+
+    width:2px;
+    height:2px;
+
+    background:white;
+
+    border-radius:50%;
+
+    opacity:.6;
+
+    animation: twinkle infinite ease-in-out;
+
+}
+
+@keyframes twinkle{
+
+    0%,100%{
+
+        opacity:.2;
+        transform:scale(.8);
+
+    }
+
+    50%{
+
+        opacity:1;
+        transform:scale(1.8);
+
+    }
+
+}
