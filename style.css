@@ -291,3 +291,28 @@ min-height:220px;
 }
 
 }
+
+/* Smooth page fade */
+
+#pageTitle,
+#pageText{
+    transition: opacity .25s ease;
+}
+
+/* 🎉 Confetti */
+
+.confetti{
+    position:fixed;
+    top:-20px;
+    width:10px;
+    height:10px;
+    animation:fall 4s linear forwards;
+    z-index:999;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+        opacity:0;
+    }
+}
