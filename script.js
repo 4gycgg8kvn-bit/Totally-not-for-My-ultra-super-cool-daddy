@@ -245,6 +245,12 @@ function showPage(){
 
     typePage(page.text);
 
+    clearTimeout(lastPageTimer);
+
+if(currentPage === pages.length - 1){
+
+    startLastPageTimer();
+
 }
 
 continueBtn.onclick = ()=>{
