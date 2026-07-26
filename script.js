@@ -247,9 +247,11 @@ function showPage(){
 
     clearTimeout(lastPageTimer);
 
-if(currentPage === pages.length - 1){
+    if(currentPage === pages.length - 1){
 
-    startLastPageTimer();
+        startLastPageTimer();
+
+    }
 
 }
 
@@ -435,7 +437,56 @@ pageTitle.addEventListener("click", () => {
         titleClicks = 0;
 
     }
+// ⏰ Last Page Easter Egg
 
+let lastPageTimer;
+
+function startLastPageTimer(){
+
+    clearTimeout(lastPageTimer);
+
+    lastPageTimer = setTimeout(()=>{
+
+        const popup = document.createElement("div");
+
+        popup.className = "popup";
+
+        popup.innerHTML = `
+            <h2>One last thing...</h2>
+
+            <br>
+
+            <p>
+
+            Still here?
+
+            <br><br>
+
+            I know you're smiling.
+
+            <br><br>
+
+            Now go text me.
+
+            <br><br>
+
+            🤍
+
+            </p>
+        `;
+
+        document.body.appendChild(popup);
+
+        setTimeout(()=>{
+
+            popup.remove();
+
+        },5000);
+
+    },20000);
+
+}
+    
 });
 // 🎵 Music Button
 
