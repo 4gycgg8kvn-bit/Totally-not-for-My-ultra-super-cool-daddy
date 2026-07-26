@@ -1,76 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Shawn 🤍</title>
+// =====================================
+// FOR SHAWN ❤️
+// Part 1 - Loading Screen
+// =====================================
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+const loadingText = document.getElementById("loadingText");
+const continueBtn = document.getElementById("continueBtn");
+const loadingScreen = document.getElementById("loadingScreen");
+const mainWebsite = document.getElementById("mainWebsite");
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+const loadingLines = [
+    { text: "Initializing...", pause: 1000 },
+    { text: "Searching database...", pause: 800 },
+    { text: "Checking if visitor is...", pause: 700 },
+    { text: "My ultra super cool daddy...", pause: 1000 },
+    { text: "Checking coolness level...", pause: 1000 },
+    { text: "Results:", pause: 500 },
+    { text: "Debatable.", pause: 800 },
+    { text: "Identity confirmed.", pause: 500 },
+    { text: "Welcome, Shawn.", pause: 800 }
+];
 
-    <link rel="stylesheet" href="style.css">
-</head>
+function wait(ms){
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-<body>
+async function typeLine(text){
 
-    <!-- ⭐ Animated Background -->
-    <div id="stars"></div>
+    for(let i=0;i<text.length;i++){
 
-    <!-- 🌌 Loading Screen -->
-    <div id="loadingScreen">
+        loadingText.innerHTML += text[i];
 
-        <div class="terminal">
+        await wait(45);
 
-            <div id="loadingText"></div>
+    }
 
-            <button id="continueBtn" style="display:none;">
-                Continue →
-            </button>
+    loadingText.innerHTML += "<br><br>";
 
-        </div>
+}
 
-    </div>
+async function startLoading(){
 
-    <!-- 💙 Main Website -->
-    <div id="mainWebsite" class="hidden">
+    loadingText.innerHTML="";
 
-        <!-- Music -->
-        <button id="musicBtn">
-            🎵
-        </button>
+    for(const line of loadingLines){
 
-        <!-- Progress -->
-        <div class="progressContainer">
-            <div id="progressBar"></div>
-        </div>
+        await typeLine(line.text);
 
-        <!-- Card -->
-        <div class="card">
+        await wait(line.pause);
 
-            <h1 id="pageTitle"></h1>
+    }
 
-            <p id="pageText"></p>
+    continueBtn.style.display="block";
 
-            <button id="nextButton">
-                Continue
-            </button>
+}
 
-            <div id="secretHeart">
-                🤍
-            </div>
+startLoading();
 
-        </div>
+continueBtn.addEventListener("click",()=>{
 
-    </div>
+    loadingScreen.style.display="none";
 
-    <!-- 🎵 Music -->
-    <audio id="bgMusic" loop>
-        <source src="music.mp3" type="audio/mpeg">
-    </audio>
+    mainWebsite.classList.remove("hidden");
 
-    <script src="script.js"></script>
-
-</body>
-</html>
+});
