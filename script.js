@@ -7,7 +7,7 @@ const loadingLines = [
     { text: "Initializing...", delay: 1000 },
     { text: "Searching database...", delay: 800 },
     { text: "Checking if visitor is...", delay: 700 },
-    { text: "My ultra super cool daddy...", delay: 1000 },
+    { text: "My ultra super cool... daddy?...", delay: 1000 },
     { text: "Checking coolness level...", delay: 1000 },
     { text: "Results:", delay: 500 },
     { text: "Debatable.", delay: 800 },
