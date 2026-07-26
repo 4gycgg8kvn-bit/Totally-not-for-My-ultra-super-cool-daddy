@@ -254,6 +254,12 @@ function showPage(){
 
 const page = pages[currentPage];
 
+// Fade out
+pageTitle.style.opacity = "0";
+pageText.style.opacity = "0";
+
+setTimeout(()=>{
+
 pageTitle.textContent = page.title;
 
 nextButton.textContent = page.button;
@@ -261,10 +267,15 @@ nextButton.textContent = page.button;
 progressBar.style.width =
 ((currentPage+1)/pages.length)*100+"%";
 
+// Fade back in
+pageTitle.style.opacity = "1";
+pageText.style.opacity = "1";
+
 typePage(page.text);
 
-}
+},250);
 
+}
 nextButton.onclick = ()=>{
 
 if(currentPage < pages.length-1){
@@ -273,6 +284,34 @@ currentPage++;
 
 showPage();
 
+if(currentPage===5){
+
+createConfetti();
+
 }
 
 };
+function createConfetti(){
+
+for(let i=0;i<120;i++){
+
+const confetti=document.createElement("div");
+
+confetti.className="confetti";
+
+confetti.style.left=Math.random()*100+"vw";
+
+confetti.style.animationDelay=Math.random()*2+"s";
+
+confetti.style.background=
+["#ffffff","#9ecbff","#c9b6ff","#ffe08a"][Math.floor(Math.random()*4)];
+
+document.body.appendChild(confetti);
+
+setTimeout(()=>{
+
+confetti.remove();
+
+},5000);
+
+}
