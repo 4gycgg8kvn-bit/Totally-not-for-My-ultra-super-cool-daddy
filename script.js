@@ -265,6 +265,13 @@ nextButton.onclick = ()=>{
 
         showPage();
 
+        // Achievement page
+        if(currentPage===5){
+
+            createConfetti();
+
+        }
+
     }
 
 };
@@ -327,3 +334,33 @@ test.style.fontSize = "40px";
 test.style.animationDuration = "6s";
 
 document.body.appendChild(test);
+// 🎉 Confetti
+
+function createConfetti(){
+
+    for(let i=0;i<150;i++){
+
+        const confetti=document.createElement("div");
+
+        confetti.className="confetti";
+
+        confetti.style.left=Math.random()*100+"vw";
+
+        confetti.style.background=
+        ["#ffffff","#9ecbff","#c9b6ff","#ffe08a","#8fd3ff"]
+        [Math.floor(Math.random()*5)];
+
+        confetti.style.animationDuration=
+        (2+Math.random()*3)+"s";
+
+        document.body.appendChild(confetti);
+
+        setTimeout(()=>{
+
+            confetti.remove();
+
+        },5000);
+
+    }
+
+}
