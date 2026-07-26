@@ -287,3 +287,33 @@ for(let i = 0; i < 120; i++){
     stars.appendChild(star);
 
 }
+// 💙 Floating Hearts & Sparkles
+
+const floatingEmojis = ["💙","🤍","✨"];
+
+setInterval(()=>{
+
+    const emoji = document.createElement("div");
+
+    emoji.className = "heartFloat";
+
+    emoji.innerHTML =
+        floatingEmojis[Math.floor(Math.random()*floatingEmojis.length)];
+
+    emoji.style.left = Math.random()*100 + "vw";
+
+    emoji.style.fontSize =
+        (18 + Math.random()*18) + "px";
+
+    emoji.style.animationDuration =
+        (6 + Math.random()*3) + "s";
+
+    document.body.appendChild(emoji);
+
+    setTimeout(()=>{
+
+        emoji.remove();
+
+    },9000);
+
+},1400);
