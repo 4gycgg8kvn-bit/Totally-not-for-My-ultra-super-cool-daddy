@@ -324,16 +324,7 @@ setInterval(()=>{
     },9000);
 
 },1400);
-const test = document.createElement("div");
 
-test.innerHTML = "💙";
-test.className = "heartFloat";
-
-test.style.left = "50vw";
-test.style.fontSize = "40px";
-test.style.animationDuration = "6s";
-
-document.body.appendChild(test);
 // 🎉 Confetti
 
 function createConfetti(){
@@ -369,6 +360,8 @@ function createConfetti(){
 const secretHeart = document.getElementById("secretHeart");
 
 secretHeart.onclick = ()=>{
+
+    alert("Heart clicked! 🤍");
 
     const popup = document.createElement("div");
 
