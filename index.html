@@ -1,65 +1,78 @@
-// =====================================
-// FOR SHAWN ❤️
-// Part 1 - Loading Screen
-// =====================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-const loadingText = document.getElementById("loadingText");
-const continueBtn = document.getElementById("continueBtn");
-const loadingScreen = document.getElementById("loadingScreen");
-const mainWebsite = document.getElementById("mainWebsite");
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-const loadingLines = [
-    { text: "Initializing...", pause: 1000 },
-    { text: "Searching database...", pause: 800 },
-    { text: "Checking if visitor is...", pause: 700 },
-    { text: "My ultra super cool daddy...", pause: 1000 },
-    { text: "Checking coolness level...", pause: 1000 },
-    { text: "Results:", pause: 500 },
-    { text: "Debatable.", pause: 800 },
-    { text: "Identity confirmed.", pause: 500 },
-    { text: "Welcome, Shawn.", pause: 800 }
-];
+<title>For Shawn ❤️</title>
 
-function wait(ms){
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
+<link rel="stylesheet" href="style.css">
 
-async function typeLine(text){
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    for(let i=0;i<text.length;i++){
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        loadingText.innerHTML += text[i];
+</head>
 
-        await wait(45);
+<body>
 
-    }
+<!-- Background Stars -->
+<div id="stars"></div>
 
-    loadingText.innerHTML += "<br><br>";
+<!-- Music -->
+<button id="musicBtn">🎵</button>
 
-}
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
 
-async function startLoading(){
+<!-- Loading Screen -->
 
-    loadingText.innerHTML="";
+<div id="loadingScreen">
 
-    for(const line of loadingLines){
+    <div class="terminal">
 
-        await typeLine(line.text);
+        <div id="loadingText"></div>
 
-        await wait(line.pause);
+        <button id="continueBtn">
+            Continue
+        </button>
 
-    }
+    </div>
 
-    continueBtn.style.display="block";
+</div>
 
-}
+<!-- Main Website -->
 
-startLoading();
+<div id="mainWebsite" class="hidden">
 
-continueBtn.addEventListener("click",()=>{
+    <!-- Progress -->
 
-    loadingScreen.style.display="none";
+    <div class="progressContainer">
 
-    mainWebsite.classList.remove("hidden");
+        <div id="progressBar"></div>
 
-});
+    </div>
+
+    <div class="card">
+
+        <h1 id="pageTitle"></h1>
+
+        <p id="pageText"></p>
+
+        <button id="nextButton">
+            Next
+        </button>
+
+        <div id="secretHeart">🤍</div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
