@@ -390,3 +390,44 @@ secretHeart.onclick = ()=>{
     },3500);
 
 };
+// 😂 Click the title 5 times
+
+let titleClicks = 0;
+
+pageTitle.addEventListener("click", () => {
+
+    titleClicks++;
+
+    if(titleClicks === 5){
+
+        const popup = document.createElement("div");
+
+        popup.className = "popup";
+
+        popup.innerHTML = `
+            <h2>😂</h2>
+            <br>
+            <p>
+            Bro...
+            <br><br>
+            Why are you clicking everything?
+            <br><br>
+            I know you miss me.
+            <br><br>
+            Relax.
+            </p>
+        `;
+
+        document.body.appendChild(popup);
+
+        setTimeout(() => {
+
+            popup.remove();
+
+        }, 3500);
+
+        titleClicks = 0;
+
+    }
+
+});
